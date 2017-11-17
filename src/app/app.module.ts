@@ -4,15 +4,14 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
-import {MyApp} from './app.component';
-import {AboutPage} from '../pages/about/about';
-import {ContactPage} from '../pages/contact/contact';
-import {HomePage} from '../pages/home/home';
-import {TabsPage} from '../pages/tabs/tabs';
-
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+
+import {MyApp} from './app.component';
+import {PagesModule} from "../pages/pages.module";
+import {ServicesModule} from "../services/services.module";
+import {UtilsModule} from "../utils/utils.module";
+import {ComponentsModule} from "../pages/components/components.module";
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -20,11 +19,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
     declarations: [
-        MyApp,
-        AboutPage,
-        ContactPage,
-        HomePage,
-        TabsPage
+        MyApp
     ],
     imports: [
         BrowserModule,
@@ -37,14 +32,14 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
+        ServicesModule,
+        UtilsModule,
+        PagesModule,
+        ComponentsModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-        MyApp,
-        AboutPage,
-        ContactPage,
-        HomePage,
-        TabsPage
+        MyApp
     ],
     providers: [
         StatusBar,

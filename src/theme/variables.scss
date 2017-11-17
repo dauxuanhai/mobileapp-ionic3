@@ -38,21 +38,24 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  my-theme:   #e94e1b,
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$button-ios-background-color: #f8f8f8;
+$button-ios-text-color: #444;
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
+$button-md-background-color: #f8f8f8;
+$button-md-text-color: #444;
 
 
 
@@ -61,6 +64,9 @@ $colors: (
 // Windows only Sass variables can go here
 
 
+// App variables
+
+$ERROR-COLOR: #dd2c00;
 
 
 // App Theme

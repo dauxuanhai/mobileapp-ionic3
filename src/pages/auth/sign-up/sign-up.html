@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="my-theme">
+        <ion-title>
+            {{ 'Sign up' | translate }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="background-img" padding>
+    <header-logo></header-logo>
+
+    <div class="btn-group">
+        <button ion-button class="button sign-up-btn" (click)="navigateTo('sign-up-sell-buy')">{{ 'Signup as Seller or Buyer' | translate }}
+        </button>
+
+        <button ion-button class="button sign-up-btn" ui-sref="auth.signupTasker">{{ 'Signup as Tasker' | translate }}</button>
+
+        <button ion-button class="button sign-up-btn" ui-sref="auth.signupAgent">{{ 'Signup as Agent or Developer' | translate }}</button>
+
+        <button ion-button class="button sign-up-btn" ui-sref="auth.signupRepresentative">{{ 'Signup as Representative' | translate }}</button>
+
+        <button ion-button class="button sign-up-btn" ui-sref="auth.signupInternationalpartners">{{ 'Signup as International partners' | translate }}</button>
+
+        <br/>
+        <br/>
+
+        <button ion-button icon-left class="button fb-btn" (click)="facebookSignup()">
+            <ion-icon name="logo-facebook"></ion-icon>
+            {{ 'Signup with your Facebook' | translate }}
+        </button>
+
+        <button ion-button icon-left class="button twitter-btn">
+            <ion-icon name="logo-twitter"></ion-icon>
+            {{ 'Signup with your Twitter' | translate }}
+        </button>
+
+        <button ion-button icon-left class="button google-btn">
+            <ion-icon name="logo-googleplus"></ion-icon>
+            {{ 'Signup with your Google+' | translate }}
+        </button>
+    </div>
+</ion-content>

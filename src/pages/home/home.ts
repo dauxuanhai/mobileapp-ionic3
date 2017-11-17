@@ -1,21 +1,32 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {TranslateService} from '@ngx-translate/core';
+import {LanguageService} from "../../services/services/language.service";
+import {SharedService} from "../../services/services/shared.service";
 
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
-    lang: string = 'en';
+    showLanguageChooser = true;
 
     constructor(public navCtrl: NavController,
-                public translate: TranslateService) {
-
+                public sharedService: SharedService,
+                public languageService: LanguageService) {
     }
 
-    switchLanguage(lang) {
-        this.lang = (lang == 'en') ? 'ar' : 'en';
-        this.translate.use(this.lang);
+    setLanguage(lang) {
+        this.showLanguageChooser = false;
+        this.languageService.setLanguage(lang);
+    }
+
+    loginAsGuest = function() {
+        this.sharedService.isGuest = true;
+        //TODO
+        //$state.go('app.browse');
+    };
+
+    navigateTo(page) {
+        this.navCtrl.push(page);
     }
 }

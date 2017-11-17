@@ -1,0 +1,36 @@
+page-sign-up {
+    .btn-group {
+        text-align: center;
+
+        .button {
+            padding-top: 5px;
+            padding-bottom: 3px;
+            width: 77%;
+            margin-top: 2%;
+            text-transform: none;
+        }
+
+        .sign-up-btn {
+            color: #7b6859;
+            background: white;
+        }
+
+        .fb-btn {
+            padding-top: 5px;
+            padding-bottom: 3px;
+            color: white;
+
+            background: #3b5998;
+        }
+
+        .twitter-btn {
+            color: white;
+            background: #4099FF;
+        }
+
+        .google-btn {
+            color: white;
+            background: #d34836;
+        }
+    }
+}

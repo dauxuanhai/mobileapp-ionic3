@@ -1,21 +1,67 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content class="background-img" padding>
+    <header-logo></header-logo>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-    <h2>{{ 'BROWSE' | translate }}</h2>
-    <h2>{{ 'Task I work on' | translate }}</h2>
+    <!--Choose Language-->
+    <div class="buttons" *ngIf="showLanguageChooser">
+        <button ion-button large (click)="setLanguage('ar')">العربية</button>
+        <br/><br/>
+        <button ion-button large (click)="setLanguage('en')">English</button>
 
-    <button ion-button (click)="switchLanguage(lang)">Switch Language</button>
+        <!--<div class="guest-link text-center">-->
+            <!--<a ng-click="loginAsGuest()">{{ 'Or continue without registration' | translate }}</a>-->
+        <!--</div>-->
+    </div>
+
+    <!--Walk through-->
+    <div class="walk-through" *ngIf="!showLanguageChooser">
+        <ion-slides pager>
+            <ion-slide>
+                <div class="slide-content">
+                    <h3>{{ 'Sign up to enjoy many free services in the Best Realestate Portal in Egypt' | translate}} </h3>
+                    <p>{{ 'Search in more than 250.000 Properties in Egypt and You can sell,buy and hire workers for free in very easy way . Contact driectly with the seller ,buyer or worker without any commssions' | translate }}</p>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="slide-content">
+                    <h3>{{ 'Our 300 Representatives at your serivice in all Egyptian areas' | translate }}</h3>
+                    <p>{{ 'If you need our help to inspect, audit , verify and secure your deal and sale... We will happy to be at your service . We have our representatives all over Egypt cities to servicing you . We can help you also in furnishing and investing your property in the best way' | translate }}.</p>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="slide-content">
+                    <h3>{{ 'Thousands of Agents and developers compete for your satisfaction' | translate }}.</h3>
+                    <p>{{ 'Only in our app you can compare offers from thousands of agents and developers very easy and select the best offer that fit your requirements and financial abilities' | translate }}.</p>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="slide-content">
+                    <h3>{{ 'Special Programs for Investors and Marketers' | translate }}.</h3>
+                    <p>{{ 'We have customized programs and services for anyone need to invest in Realestate sector and also we offer partnership affiliate programs for marketers' | translate }}.</p>
+                </div>
+            </ion-slide>
+        </ion-slides>
+
+        <div class="buttons" dir='ltr'>
+            <!--Login-->
+            <!--dir='rtl' ui-sref="auth.login"-->
+            <a ion-button outline icon-right color="light" dir='ltr'>
+                {{ 'Log In' | translate }}
+                <ion-icon name="ios-lock-outline"></ion-icon>
+            </a>
+
+            <!--Sign up-->
+            <!--dir='rtl' ui-sref="auth.signup"-->
+            <a ion-button icon-right class="sign-up-btn" (click)="navigateTo('sign-up')" dir='ltr'>
+                {{ 'Sign up' | translate }}
+                <ion-icon name="ios-create-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="guest-link text-center">
+            <a ng-click="loginAsGuest()">{{ 'Or continue without registration' | translate }}</a>
+        </div>
+    </div>
+
 </ion-content>

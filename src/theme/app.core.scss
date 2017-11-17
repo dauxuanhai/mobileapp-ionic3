@@ -1,0 +1,20 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+ion-content {
+    &.background-img {
+        background: url('../assets/imgs/background.png') no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.label-md[floating],
+.label-ios[floating] {
+    transform: translate3d(0, 20px, 0);
+}

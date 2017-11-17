@@ -1,3 +1,50 @@
 page-home {
+    .buttons {
+        margin-top: 66px;
+        text-align: center;
 
+        button {
+            text-transform: none;
+        }
+    }
+
+    .guest-link a {
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .walk-through {
+        margin-top: 60px;
+        color: #fff;
+        text-align: center;
+
+        .buttons {
+            margin-top: 30px;
+            a {
+                color: #fff;
+            }
+
+            .sign-up-btn {
+                border: 1px solid #e94e1b;
+                background: #e94e1b;
+                margin-left: 10px;
+            }
+        }
+
+        .slide-content {
+            margin-bottom: 20px;
+            padding: 3px;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-top: 25px;
+            }
+        }
+    }
 }
